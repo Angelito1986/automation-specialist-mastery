@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Sidebar Switching
+  // ===== Sidebar Navigation =====
   const sections = document.querySelectorAll(".section");
   const navItems = document.querySelectorAll(".sidebar li");
 
@@ -17,14 +17,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
+  // ===== Q&A Toggle (Accordion) =====
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const header = card.querySelector("h3");
+    const answer = card.querySelector(".answer");
+
+    if (!header || !answer) return;
+
+    header.addEventListener("click", () => {
+
+      const isOpen = answer.classList.contains("show");
+
+      // Close all
+      document.querySelectorAll(".answer").forEach(a => {
+        a.classList.remove("show");
+        a.style.maxHeight = null;
+      });
+
+      document.querySelectorAll(".card h3").forEach(h => {
+        h.classList.remove("open");
+      });
+
+      // Open clicked
+      if (!isOpen) {
+        answer.classList.add("show");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        header.classList.add("open");
+      }
+    });
+  });
+
 });
-
-// Toggle Answer
-function toggle(element) {
-  const answer = element.parentElement.querySelector(".answer");
-
-  if (!answer) return;
-
-  answer.classList.toggle("show");
-  element.classList.toggle("open");
-}
