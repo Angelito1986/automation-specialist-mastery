@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Specialist Mastery</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0f19;
+    color: #e6f1ff;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #111827;
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: #00ff9f;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.sidebar li:hover {
+    background: #1f2937;
+}
+
+.main {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+.section {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Automation Mastery</h2>
+    <ul>
+        <li onclick="showSection('interview')">Interview Prep</li>
+        <li onclick="showSection('tools')">Automation Tools</li>
+        <li onclick="showSection('architecture')">System Architecture</li>
+    </ul>
+</div>
+
+<div class="main">
+
+    <div id="interview" class="section active">
+        <h1>Interview Preparation</h1>
+        <div class="card">
+            <h3>Tell me about a complex automation project</h3>
+            <p>Explain problem, tools chosen, architecture, metrics, and results.</p>
+        </div>
+    </div>
+
+    <div id="tools" class="section">
+        <h1>Automation Tools Stack</h1>
+        <div class="card">
+            <p>Make.com, Zapier, n8n, GoHighLevel, HubSpot, Shopify</p>
+        </div>
+    </div>
+
+    <div id="architecture" class="section">
+        <h1>System Architecture</h1>
+        <div class="card">
+            <p>5-Layer Model: Strategy → Process → Logic → Data → Infrastructure</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
