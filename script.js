@@ -1,23 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
+function showSection(id) {
+  document.querySelectorAll(".section").forEach(sec => {
+    sec.classList.remove("active");
+  });
 
-    const sections = document.querySelectorAll(".section");
-    const navItems = document.querySelectorAll(".sidebar li");
+  document.querySelectorAll(".sidebar li").forEach(li => {
+    li.classList.remove("active");
+  });
 
-    navItems.forEach((item, index) => {
-        item.addEventListener("click", () => {
+  document.getElementById(id).classList.add("active");
 
-            // Hide all sections
-            sections.forEach(section => section.classList.remove("active"));
-
-            // Remove active from all nav items
-            navItems.forEach(nav => nav.classList.remove("active"));
-
-            // Show selected section
-            sections[index].classList.add("active");
-
-            // Highlight selected nav
-            item.classList.add("active");
-        });
-    });
-
-});
+  event.target.classList.add("active");
+}
