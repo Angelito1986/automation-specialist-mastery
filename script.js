@@ -1,13 +1,9 @@
 function showSection(id) {
-  document.querySelectorAll(".section").forEach(sec => {
-    sec.classList.remove("active");
-  });
+  const sections = document.querySelectorAll(".section");
 
-  document.querySelectorAll(".sidebar li").forEach(li => {
-    li.classList.remove("active");
+  sections.forEach(section => {
+    section.classList.remove("active");
   });
 
   document.getElementById(id).classList.add("active");
-
-  event.target.classList.add("active");
 }
