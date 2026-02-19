@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Automation Specialist Mastery Map</title>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,28 +14,32 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h2 class="logo">Automation<br>Mastery</h2>
+    <h2>Automation<br>Mastery</h2>
 
-    <nav>
-      <ul>
-        <li class="active" onclick="showSection('interview')">🎯 Interview Prep</li>
-        <li onclick="showSection('tools')">🛠 Automation Tools</li>
-        <li onclick="showSection('architecture')">🏗 System Architecture</li>
-      </ul>
-    </nav>
+    <ul>
+      <li onclick="showSection('interview')">🎯 Interview Prep</li>
+      <li onclick="showSection('tools')">🛠 Automation Tools</li>
+      <li onclick="showSection('architecture')">🏗 System Architecture</li>
+    </ul>
   </aside>
+
 
   <!-- MAIN CONTENT -->
   <main class="content">
 
-    <header class="page-header">
+    <!-- HEADER -->
+    <div class="page-header">
       <p class="version">// KNOWLEDGE MAP V2.0</p>
       <h1>Automation Specialist<br>Mastery Map</h1>
-      <p class="subtitle">Click a section in the sidebar → expand cards → ace your interviews</p>
-    </header>
+      <p class="subtitle">
+        Click a section in the sidebar → expand cards → ace your interviews
+      </p>
+    </div>
+
 
     <!-- INTERVIEW SECTION -->
     <section id="interview" class="section active">
+
       <div class="card red">
         <h3>Behavioral / Experience Questions</h3>
 
@@ -52,29 +57,69 @@
           <strong>Describe a time your automation broke in production.</strong>
           <p>Root cause → rollback → monitoring added → prevention plan.</p>
         </div>
-
       </div>
+
+
+      <div class="card blue">
+        <h3>Technical / Hands-On Questions</h3>
+
+        <div class="question">
+          <strong>Design a CI/CD pipeline for automation workflows.</strong>
+          <p>Trigger → Build → Test → Deploy → Monitor → Rollback strategy.</p>
+        </div>
+
+        <div class="question">
+          <strong>What is idempotency and why does it matter?</strong>
+          <p>Ensures repeatable execution without duplicate side effects.</p>
+        </div>
+
+        <div class="question">
+          <strong>How do you handle flaky automation?</strong>
+          <p>Retry logic → isolate state → logging → monitoring → root cause fix.</p>
+        </div>
+      </div>
+
     </section>
+
+
 
     <!-- TOOLS SECTION -->
     <section id="tools" class="section">
-      <div class="card blue">
+
+      <div class="card green">
         <h3>Automation Stack</h3>
         <p>Make.com • Zapier • n8n • GoHighLevel • HubSpot • Shopify</p>
       </div>
+
+      <div class="card purple">
+        <h3>Integration Strategy</h3>
+        <p>API-first • Webhooks • Queue handling • Error retries • Monitoring</p>
+      </div>
+
     </section>
+
+
 
     <!-- ARCHITECTURE SECTION -->
     <section id="architecture" class="section">
+
       <div class="card purple">
-        <h3>5-Layer Automation Architecture</h3>
+        <h3>5-Layer Automation Model</h3>
         <p>Strategy → Process → Logic → Data → Infrastructure</p>
       </div>
+
+      <div class="card blue">
+        <h3>Scalable Architecture</h3>
+        <p>Modular workflows • Version control • CI/CD • Logging • Alerting</p>
+      </div>
+
     </section>
 
   </main>
+
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
