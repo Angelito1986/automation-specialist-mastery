@@ -3,21 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card");
 
     cards.forEach(card => {
-        const question = card.querySelector("h3");
+        card.addEventListener("click", function () {
 
-        question.addEventListener("click", function () {
+            if (card.classList.contains("active")) {
+                card.classList.remove("active");
+            } else {
+                cards.forEach(c => c.classList.remove("active"));
+                card.classList.add("active");
+            }
 
-            // Close all other open cards (accordion behavior)
-            cards.forEach(c => {
-                if (c !== card) {
-                    c.classList.remove("active");
-                }
-            });
-
-            // Toggle clicked card
-            card.classList.toggle("active");
         });
-
     });
 
 });
