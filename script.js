@@ -4,13 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const navItems = document.querySelectorAll(".sidebar li");
 
   navItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      
-      sections.forEach(sec => sec.style.display = "none");
-      sections[index].style.display = "block";
+    item.addEventListener("click", function () {
 
-      navItems.forEach(i => i.style.color = "#94a3b8");
-      item.style.color = "#00ff9d";
+      // Hide all sections
+      sections.forEach(sec => sec.classList.remove("active"));
+
+      // Remove active from all nav items
+      navItems.forEach(i => i.classList.remove("active"));
+
+      // Show selected section
+      sections[index].classList.add("active");
+
+      // Highlight active nav item
+      item.classList.add("active");
     });
   });
 
