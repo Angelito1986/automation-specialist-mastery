@@ -1,140 +1,135 @@
-/* ===== GLOBAL ===== */
+/* ============================= */
+/* GLOBAL STYLES */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: #e2e8f0;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e2e8f0;
 }
 
-h1, h2, h3 {
-  margin-top: 0;
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
+
+.container {
+    display: flex;
+    min-height: 100vh;
 }
 
-/* ===== LAYOUT ===== */
+/* Sidebar */
 
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background: #0b1220;
-  position: fixed;
-  padding: 30px 20px;
-  border-right: 1px solid rgba(0,255,170,0.1);
+    width: 260px;
+    background: #0b1220;
+    padding: 30px 20px;
+    border-right: 1px solid rgba(255,255,255,0.05);
 }
 
 .sidebar h2 {
-  color: #00ff99;
-  margin-bottom: 30px;
+    color: #22d3ee;
+    margin-bottom: 25px;
+    font-size: 22px;
 }
 
 .sidebar ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
 }
 
 .sidebar li {
-  padding: 12px 15px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  color: #94a3b8;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #94a3b8;
+    transition: 0.3s;
 }
 
 .sidebar li:hover {
-  background: rgba(0,255,170,0.1);
-  color: #00ff99;
+    color: #22d3ee;
 }
 
-.sidebar li.active {
-  background: rgba(0,255,170,0.2);
-  color: #00ff99;
-}
-
-/* ===== MAIN ===== */
+/* Main Content */
 
 .main {
-  margin-left: 270px;
-  padding: 60px;
+    flex: 1;
+    padding: 50px;
 }
 
-/* ===== SECTION ===== */
-
-.section {
-  display: none;
+.main h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
-.section:first-child {
-  display: block;
+.main p {
+    color: #94a3b8;
+    margin-bottom: 30px;
 }
 
-/* ===== CARDS ===== */
+/* ============================= */
+/* CARD STYLES */
+/* ============================= */
 
 .card {
-  background: #0f172a;
-  padding: 25px;
-  border-radius: 16px;
-  margin-bottom: 25px;
-  border-left: 4px solid #00ff99;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 18px;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+    border-color: #22d3ee;
 }
 
-/* ===== QUESTION HEADER ===== */
+/* Question Title */
 
 .card h3 {
-  cursor: pointer;
-  position: relative;
-  padding-right: 30px;
-  transition: color 0.3s ease;
-}
-
-.card h3::after {
-  content: "+";
-  position: absolute;
-  right: 0;
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.card h3.open::after {
-  content: "–";
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #e2e8f0;
+    transition: 0.3s;
 }
 
 .card h3:hover {
-  color: #00ff99;
+    color: #22d3ee;
 }
 
-/* ===== ANSWER ===== */
+/* ============================= */
+/* ANSWER TOGGLE */
+/* ============================= */
 
 .answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, margin-top 0.3s ease;
-  color: #cbd5e1;
-  line-height: 1.7;
-  font-size: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+    color: #cbd5e1;
+    line-height: 1.6;
 }
 
-.answer.show {
-  margin-top: 15px;
+.card.active .answer {
+    max-height: 500px; /* enough for long answers */
+    opacity: 1;
+    margin-top: 12px;
 }
 
-/* ===== SCROLLBAR (optional premium touch) ===== */
+/* ============================= */
+/* OPTIONAL SCROLL LOOK */
+/* ============================= */
 
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff99;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0b1220;
+    background: #1e293b;
+    border-radius: 4px;
 }
