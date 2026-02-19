@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const questions = document.querySelectorAll(".question");
 
-    const cards = document.querySelectorAll(".card");
+    questions.forEach(question => {
+        question.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
 
-    cards.forEach(card => {
-        card.addEventListener("click", function () {
+            // Close all others
+            document.querySelectorAll(".answer").forEach(a => {
+                if (a !== answer) {
+                    a.style.display = "none";
+                }
+            });
 
-            if (card.classList.contains("active")) {
-                card.classList.remove("active");
-            } else {
-                cards.forEach(c => c.classList.remove("active"));
-                card.classList.add("active");
-            }
-
+            // Toggle current
+            answer.style.display =
+                answer.style.display === "block" ? "none" : "block";
         });
     });
-
 });
