@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Specialist Mastery</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Specialist Mastery Map</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div class="sidebar">
-    <h2>Automation Mastery</h2>
-    <ul>
-        <li class="active">Interview Prep</li>
-        <li>Automation Tools</li>
-        <li>System Architecture</li>
-    </ul>
-</div>
+<div class="layout">
 
-<div class="main">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">Automation<br>Mastery</h2>
 
-    <div class="section active">
-        <h1>Interview Preparation</h1>
-        <div class="card">
-            <h3>Tell me about a complex automation project</h3>
-            <p>Explain the problem, tools chosen, architecture, metrics, and results.</p>
+    <nav>
+      <ul>
+        <li class="active" onclick="showSection('interview')">🎯 Interview Prep</li>
+        <li onclick="showSection('tools')">🛠 Automation Tools</li>
+        <li onclick="showSection('architecture')">🏗 System Architecture</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <header class="page-header">
+      <p class="version">// KNOWLEDGE MAP V2.0</p>
+      <h1>Automation Specialist<br>Mastery Map</h1>
+      <p class="subtitle">Click a section in the sidebar → expand cards → ace your interviews</p>
+    </header>
+
+    <!-- INTERVIEW SECTION -->
+    <section id="interview" class="section active">
+      <div class="card red">
+        <h3>Behavioral / Experience Questions</h3>
+
+        <div class="question">
+          <strong>Tell me about a complex automation project you built from scratch.</strong>
+          <p>Structure: Problem → Tools → Architecture → Challenges → Metrics → Results.</p>
         </div>
-    </div>
 
-    <div class="section">
-        <h1>Automation Tools Stack</h1>
-        <div class="card">
-            <p>Make.com, Zapier, n8n, GoHighLevel, HubSpot, Shopify</p>
+        <div class="question">
+          <strong>How do you decide what to automate vs leave manual?</strong>
+          <p>ROI thinking: time saved vs cost, stability, error rate, compliance.</p>
         </div>
-    </div>
 
-    <div class="section">
-        <h1>System Architecture</h1>
-        <div class="card">
-            <p>5-Layer Model: Strategy → Process → Logic → Data → Infrastructure</p>
+        <div class="question">
+          <strong>Describe a time your automation broke in production.</strong>
+          <p>Root cause → rollback → monitoring added → prevention plan.</p>
         </div>
-    </div>
 
+      </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section id="tools" class="section">
+      <div class="card blue">
+        <h3>Automation Stack</h3>
+        <p>Make.com • Zapier • n8n • GoHighLevel • HubSpot • Shopify</p>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE SECTION -->
+    <section id="architecture" class="section">
+      <div class="card purple">
+        <h3>5-Layer Automation Architecture</h3>
+        <p>Strategy → Process → Logic → Data → Infrastructure</p>
+      </div>
+    </section>
+
+  </main>
 </div>
 
 <script src="script.js"></script>
